@@ -242,9 +242,14 @@ python benchmark.py --input data --model models/recapture_logistic.joblib --repe
 Current measured latency on a Windows laptop CPU:
 
 ```text
-Mean latency:   106.62 ms/image
-Median latency: 110.34 ms/image
-P95 latency:    137.58 ms/image
+Latency results
+--------------------------------------------------
+Total measured predictions: 405
+Mean latency:   71.79 ms/image
+Median latency: 71.80 ms/image
+P95 latency:    82.57 ms/image
+Min latency:    52.12 ms/image
+Max latency:    94.57 ms/image
 ```
 
 This was measured over 135 images using `benchmark.py`.
