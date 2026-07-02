@@ -7,11 +7,15 @@ import numpy as np
 from PIL import Image
 
 from predict import predict
-
+from predict import load_model_bundle
 
 MODEL_PATH = "models/recapture_logistic.joblib"
 THRESHOLD = 0.43
-
+try:
+    load_model_bundle(MODEL_PATH)
+    print("Model preloaded successfully.", flush=True)
+except Exception as e:
+    print(f"Model preload failed: {e}", flush=True)
 
 def predict_from_image(image):
     if image is None:
