@@ -1,0 +1,57 @@
+Recaptured Photo Detection - Cross Validation Report
+======================================================================
+
+Generated at: 2026-07-02 17:25:48
+
+Dataset
+----------------------------------------------------------------------
+Total images:  135
+Real images:   63
+Screen images: 72
+Total features: 354
+
+Model
+----------------------------------------------------------------------
+Model type: Logistic Regression
+Feature scaling: StandardScaler
+Class weight: balanced
+Solver: liblinear
+Cross validation: 5-fold StratifiedKFold
+
+Cross-Validation Fold Averages at Threshold 0.50
+----------------------------------------------------------------------
+Mean fold accuracy: 0.9630 ± 0.0406
+Mean fold F1:       0.9627 ± 0.0439
+Mean fold AUC:      0.9901 ± 0.0145
+
+Out-of-Fold Results at Best Threshold
+----------------------------------------------------------------------
+Best threshold: 0.43
+OOF accuracy:   0.9630
+OOF F1:         0.9650
+OOF ROC-AUC:    0.9881
+
+OOF Confusion Matrix at Best Threshold
+----------------------------------------------------------------------
+Rows = true labels, columns = predicted labels
+[[true_real_as_real, true_real_as_screen],
+ [true_screen_as_real, true_screen_as_screen]]
+
+[[61  2]
+ [ 3 69]]
+
+OOF Classification Report at Best Threshold
+----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+        real       0.95      0.97      0.96        63
+      screen       0.97      0.96      0.97        72
+
+    accuracy                           0.96       135
+   macro avg       0.96      0.96      0.96       135
+weighted avg       0.96      0.96      0.96       135
+
+
+Notes
+----------------------------------------------------------------------
+The reported numbers are from 5-fold stratified cross-validation on the current self-collected dataset. After cross-validation, the final Logistic Regression model is retrained on the full available dataset before saving. Hidden-test performance may vary with different phones, displays, lighting, compression, and recapture styles.
