@@ -172,32 +172,32 @@ The final model is retrained on the full available dataset after cross-validatio
 On the current self-collected dataset of 135 images:
 
 ```text
-Real images:   63
+Real images:   72
 Screen images: 72
 ```
 
 5-fold stratified cross-validation gave:
 
 ```text
-Out-of-fold accuracy: 96.30%
-Out-of-fold F1:       96.50%
-Out-of-fold ROC-AUC:  98.81%
-Best threshold:       0.43
+Out-of-fold accuracy: 94.44%
+Out-of-fold F1:       94.44%
+Out-of-fold ROC-AUC:  97.28%
+Best threshold:       0.59
 ```
 
 Confusion matrix at the best threshold:
 
 ```text
-[[61  2]
- [ 3 69]]
+[[68  4]
+ [ 4 68]]
 ```
 
 This means:
 
-- 61 real photos correctly classified as real
-- 2 real photos incorrectly flagged as screen
-- 69 screen recaptures correctly classified as screen
-- 3 screen recaptures missed as real
+- 68 real photos correctly classified as real
+- 4 real photos incorrectly flagged as screen
+- 68 screen recaptures correctly classified as screen
+- 4 screen recaptures missed as real
 
 These numbers are also saved in:
 
@@ -245,11 +245,11 @@ Current measured latency on a Windows laptop CPU:
 Latency results
 --------------------------------------------------
 Total measured predictions: 405
-Mean latency:   71.79 ms/image
-Median latency: 71.80 ms/image
-P95 latency:    82.57 ms/image
-Min latency:    52.12 ms/image
-Max latency:    94.57 ms/image
+Mean latency:   126.06 ms/image
+Median latency: 124.53 ms/image
+P95 latency:    142.21 ms/image
+Min latency:    106.99 ms/image
+Max latency:    176.31 ms/image
 ```
 
 This was measured over 135 images using `benchmark.py`.

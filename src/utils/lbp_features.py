@@ -5,6 +5,7 @@ import cv2
 def compute_lbp(gray: np.ndarray) -> np.ndarray:
     """
     Simple 8-neighbor Local Binary Pattern implementation.
+    No external skimage dependency needed.
     """
     gray = gray.astype(np.uint8)
 

@@ -1,14 +1,14 @@
 Recaptured Photo Detection - Cross Validation Report
 ======================================================================
 
-Generated at: 2026-07-02 17:25:48
+Generated at: 2026-07-03 04:16:33
 
 Dataset
 ----------------------------------------------------------------------
-Total images:  135
-Real images:   63
+Total images:  144
+Real images:   72
 Screen images: 72
-Total features: 354
+Total features: 405
 
 Model
 ----------------------------------------------------------------------
@@ -20,16 +20,16 @@ Cross validation: 5-fold StratifiedKFold
 
 Cross-Validation Fold Averages at Threshold 0.50
 ----------------------------------------------------------------------
-Mean fold accuracy: 0.9630 ± 0.0406
-Mean fold F1:       0.9627 ± 0.0439
-Mean fold AUC:      0.9901 ± 0.0145
+Mean fold accuracy: 0.9234 ± 0.0266
+Mean fold F1:       0.9244 ± 0.0282
+Mean fold AUC:      0.9776 ± 0.0211
 
 Out-of-Fold Results at Best Threshold
 ----------------------------------------------------------------------
-Best threshold: 0.43
-OOF accuracy:   0.9630
-OOF F1:         0.9650
-OOF ROC-AUC:    0.9881
+Best threshold: 0.59
+OOF accuracy:   0.9444
+OOF F1:         0.9444
+OOF ROC-AUC:    0.9728
 
 OOF Confusion Matrix at Best Threshold
 ----------------------------------------------------------------------
@@ -37,19 +37,19 @@ Rows = true labels, columns = predicted labels
 [[true_real_as_real, true_real_as_screen],
  [true_screen_as_real, true_screen_as_screen]]
 
-[[61  2]
- [ 3 69]]
+[[68  4]
+ [ 4 68]]
 
 OOF Classification Report at Best Threshold
 ----------------------------------------------------------------------
               precision    recall  f1-score   support
 
-        real       0.95      0.97      0.96        63
-      screen       0.97      0.96      0.97        72
+        real       0.94      0.94      0.94        72
+      screen       0.94      0.94      0.94        72
 
-    accuracy                           0.96       135
-   macro avg       0.96      0.96      0.96       135
-weighted avg       0.96      0.96      0.96       135
+    accuracy                           0.94       144
+   macro avg       0.94      0.94      0.94       144
+weighted avg       0.94      0.94      0.94       144
 
 
 Notes

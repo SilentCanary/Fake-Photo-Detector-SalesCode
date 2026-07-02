@@ -7,6 +7,7 @@ from src.utils.lbp_features import extract_lbp_features
 from src.utils.color_features import extract_color_features
 from src.utils.rgb_phase_features import extract_rgb_phase_features
 from src.utils.edge_features import extract_edge_features
+from src.utils.native_patch_features import extract_native_patch_features
 
 
 def extract_all_features(image_path: str | Path) -> dict:
@@ -35,6 +36,10 @@ def extract_all_features(image_path: str | Path) -> dict:
     features.update(extract_color_features(img_bgr))
     features.update(extract_rgb_phase_features(img_bgr))
     features.update(extract_edge_features(gray))
+
+    # Native-resolution patch features preserve moire/screen-grid artifacts
+    # that can be weakened by globally resizing the image.
+    features.update(extract_native_patch_features(image_path))
 
     # Safety: replace NaN/inf with 0
     for key, value in list(features.items()):

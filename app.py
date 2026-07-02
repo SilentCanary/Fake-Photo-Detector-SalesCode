@@ -10,10 +10,11 @@ from predict import predict
 from predict import load_model_bundle
 
 MODEL_PATH = "models/recapture_logistic.joblib"
-THRESHOLD = 0.43
+THRESHOLD = 0.59
 try:
-    load_model_bundle(MODEL_PATH)
-    print("Model preloaded successfully.", flush=True)
+    _bundle = load_model_bundle(MODEL_PATH)
+    THRESHOLD = float(_bundle.get("threshold", 0.59))
+    print(f"Model preloaded successfully. Threshold={THRESHOLD:.2f}", flush=True)
 except Exception as e:
     print(f"Model preload failed: {e}", flush=True)
 
@@ -107,7 +108,7 @@ with gr.Blocks(title="Spot the Fake Photo") as demo:
         """
         ### Method
         This demo uses handcrafted computer-vision features:
-        FFT/moiré statistics, LBP texture, HSV glare/saturation, RGB-channel behavior, and edge/sharpness features.
+        FFT/moiré statistics, native-resolution patch FFT/residual features, LBP texture, HSV glare/saturation, RGB-channel behavior, and edge/sharpness features.
         A small Logistic Regression model converts these features into a recapture score.
         """
     )
